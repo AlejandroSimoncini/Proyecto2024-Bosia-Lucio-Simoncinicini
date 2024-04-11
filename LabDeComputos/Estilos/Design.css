@@ -23,6 +23,7 @@ body
     width: auto; height: 19.5cm;
     display: block; justify-content:center; align-items: flex-start;
     background-color: rgb(165, 165, 165);
+    margin: 0px;
 }
 
 .barra
@@ -45,7 +46,23 @@ body
 
     
 }
+.BotonFacil
+{
+    width: 20%; height: 50%;
+    background-image: url(/Imagenes/Facil.png);
+}
 
+.BotonNormal
+{
+    width: 20%; height: 50%;
+    background-image: url(/Imagenes/Medio.png);
+}
+
+.BotonDificil
+{
+    width: 20%; height: 50%;
+    background-image: url(/Imagenes/Dificil.png);
+}
 
 .boton
 {

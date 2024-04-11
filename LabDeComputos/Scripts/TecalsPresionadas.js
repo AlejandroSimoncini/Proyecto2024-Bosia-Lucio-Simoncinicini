@@ -1,7 +1,10 @@
-document.addEventListener(
-    'keydown', function(event)
+document.addEventListener('keydown', function(event)
     {
-     if(event.key === ' '){ }   
+     if(event.code === 'Space')
+    {
+        const Facil = document.querySelector('')
+        
+    }   
     }
 
 )
