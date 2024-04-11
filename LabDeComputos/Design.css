@@ -1,10 +1,21 @@
 body
 {
     font-family: "Tilt Neon";
+    
 }
 
+.TituloP
+{
+    font-family: "Pixelify Sans";
+    font-size: 1cm;
+}
 
-
+.PPJ
+{
+    display: flex; justify-content: center; align-items: center;
+    margin-left: auto;  margin-right: auto;
+    font-family: 'Abel'; font-size: 30px;
+}
 
 
 
@@ -18,7 +29,7 @@ body
 
 .menu
 {
-    width: auto; height: 20cm;
+    width: auto; height: 19.5cm;
     display: block; justify-content:center; align-items: flex-start;
     background-color: rgb(165, 165, 165);
 }
@@ -29,7 +40,7 @@ body
     display: inline-flex; justify-content: center; align-items: center;
     background-color: rgb(54, 54, 54);
 
-    gap: 50%;
+    gap: 10%;
 }
 
 .pantalla1
