@@ -1,0 +1,105 @@
+body
+{
+    font-family: "Tilt Neon";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu
+{
+    width: auto; height: 20cm;
+    display: block; justify-content:center; align-items: flex-start;
+    background-color: rgb(165, 165, 165);
+}
+
+.barra
+{
+    width: 100%; height: 1.5cm; 
+    display: inline-flex; justify-content: center; align-items: center;
+    background-color: rgb(54, 54, 54);
+
+    gap: 50%;
+}
+
+.pantalla1
+{
+    display: flex; justify-content: flex-start; align-items: center;
+    width: 50%; height: 30%; border: solid 1px #8b8b8b; border-radius: 10px;
+    background-color: aliceblue;
+    margin-left: auto;  margin-right: auto; margin-top: 4cm;
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+.boton
+{
+    opacity: 0.8;
+    color: aliceblue;
+    font-family: "Tilt Neon"; font-size: medium;
+    width: auto; height: auto;
+    background-color: transparent;
+    border: 0px;
+
+}
+.boton:hover
+{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.DinoP
+{
+    width: 25%; height: 30%;
+    object-fit: contain;
+    position: relative;
+    left: 20%;
+    top: 25%;
+}
+.TeranodonP
+{
+    width: 25%; height: 30%;
+    object-fit: contain;
+    position: relative;
+    left: 20%;
+    bottom: 20%;
+    top: 12%;
+}
+.CactusP
+{
+    width: 25%; height: 30%;
+    object-fit: contain;
+    position: relative;
+    left: 15%;
+    top: 25%; 
+}
