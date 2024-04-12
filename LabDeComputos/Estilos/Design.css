@@ -126,26 +126,30 @@ a{
 
 #DinoP
 {
-    width: 25%; height: 30%;
+    width: 20%; height: 30%;
     object-fit: contain;
     position: relative;
-    left: 20%;
+    left: 10%;
     top: 25%;
+    padding-top: 70px;
 }
 #TeranodonP
 {
-    width: 25%; height: 30%;
+    width: 15%; height: 25%;
     object-fit: contain;
     position: relative;
     left: 20%;
-    bottom: 20%;
-    top: 12%;
+    bottom: 25%;
+    top: 5%;
+    padding-bottom: 20px;
+
 }
 #CactusP
 {
     width: 25%; height: 30%;
     object-fit: contain;
     position: relative;
-    left: 15%;
+    left: 25%;
     top: 25%; 
+    padding-top: 170px;
 }
