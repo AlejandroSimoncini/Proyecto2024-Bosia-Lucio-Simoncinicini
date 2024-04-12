@@ -3,6 +3,7 @@ body
     font-family: "Tilt Neon";
     background-color: rgb(165, 165, 165);
     margin: 0px;
+    text-align: center;
 }
 
 header
@@ -40,10 +41,12 @@ ul li{
     font-family: 'Abel'; font-size: 30px;
 }
 
-
-
-
-
+/*tablero del juego*/
+#board 
+{
+    background-color:lightgray;
+    border-bottom: 1px solid black; 
+}
 
 
 
