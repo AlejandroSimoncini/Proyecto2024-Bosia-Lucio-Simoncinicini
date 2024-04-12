@@ -1,16 +1,28 @@
 body
 {
     font-family: "Tilt Neon";
-    
+    background-color: rgb(165, 165, 165);
+    margin: 0px;
 }
 
-.TituloP
+header
+{
+    width: 100%; height: 1.5cm; 
+    display: inline-flex; justify-content: center; align-items: center;
+    background-color: rgb(54, 54, 54);
+    color: greenyellow;
+    gap: 50%;
+
+    text-shadow: 0 0 5px rgba(252, 252, 252, 0.527);
+}
+
+#TituloP
 {
     font-family: "Pixelify Sans";
     font-size: 1cm;
 }
 
-.PPJ
+#PPJ
 {
     display: flex; justify-content: center; align-items: center;
     margin-left: auto;  margin-right: auto;
@@ -29,48 +41,21 @@ body
 
 .menu
 {
-    width: auto; height: 19.5cm;
+    width: 100%; height: 100%;
     display: block; justify-content:center; align-items: flex-start;
     background-color: rgb(165, 165, 165);
     margin: 0px;
 }
 
-.barra
-{
-    width: 100%; height: 1.5cm; 
-    display: inline-flex; justify-content: center; align-items: center;
-    background-color: rgb(54, 54, 54);
-    color: greenyellow;
-    gap: 50%;
-
-    text-shadow: 0 0 5px rgba(252, 252, 252, 0.527);
-}
 
 .pantalla1
 {
     display: flex; justify-content: flex-start; align-items: center;
-    width: 50%; height: 30%; border: solid 1px #8b8b8b; border-radius: 10px;
+    width: 70%; height: 50%; border: solid 1px #8b8b8b; border-radius: 10px;
     background-color: aliceblue;
     margin-left: auto;  margin-right: auto; margin-top: 4cm;
 
     
-}
-.BotonFacil
-{
-    width: 20%; height: 50%;
-    background-image: url(/Imagenes/Facil.png);
-}
-
-.BotonNormal
-{
-    width: 20%; height: 50%;
-    background-image: url(/Imagenes/Medio.png);
-}
-
-.BotonDificil
-{
-    width: 20%; height: 50%;
-    background-image: url(/Imagenes/Dificil.png);
 }
 
 
@@ -108,7 +93,7 @@ body
 
 
 
-.DinoP
+#DinoP
 {
     width: 25%; height: 30%;
     object-fit: contain;
@@ -116,7 +101,7 @@ body
     left: 20%;
     top: 25%;
 }
-.TeranodonP
+#TeranodonP
 {
     width: 25%; height: 30%;
     object-fit: contain;
@@ -125,7 +110,7 @@ body
     bottom: 20%;
     top: 12%;
 }
-.CactusP
+#CactusP
 {
     width: 25%; height: 30%;
     object-fit: contain;
