@@ -6,6 +6,7 @@ body
     
     filter: blur(0px);
     transition: opacity 0.1s ease-in, filter 0.1s ease-in;
+    text-align: center;
 }
 
 header
@@ -43,13 +44,12 @@ ul li{
     font-family: 'Abel'; font-size: 30px;
 }
 
-
-
-
-
-
-
-
+/*tablero del juego*/
+#board 
+{
+    background-color:lightgray;
+    border-bottom: 1px solid black; 
+}
 
 
 
