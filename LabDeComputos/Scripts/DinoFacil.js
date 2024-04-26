@@ -30,7 +30,8 @@ let cactus2Img;
 
 //fisicas
 let velocidadX= -8;
-
+let velocidadSalto = 0;
+let gravedad = 1.5;
 
 window.onload = function() //
 {
@@ -54,6 +55,7 @@ window.onload = function() //
     
     requestAnimationFrame(actualizar);
     setInterval(crearCactus, 1000); //llama a la funcion crear cactus cada 1000 milisegundos = 1 segundo
+    document.addEventListener("keydown", saltar);
 }
 
 function actualizar()  //funcion que dibuja cada frame
@@ -62,6 +64,8 @@ function actualizar()  //funcion que dibuja cada frame
 
     context.clearRect(0,0,boardWidth,boardHeight); //elimina los movimientos anteriores de cada elemento
     
+    velocidadSalto += gravedad;
+    dino.y = Math.min(dino.y + velocidadSalto, dinoY); //agrega la velocidad y asegura que el dinosaurio no salga del board
     context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
 
     for (let i=0 ;i <cactusArray.length; i++)
@@ -70,6 +74,7 @@ function actualizar()  //funcion que dibuja cada frame
         context.drawImage(cactus.img , cactus.x , cactus.y , cactus.width , cactus.height);
         cactus.x+=velocidadX;
     }
+
 }
 
 function crearCactus()
@@ -96,5 +101,16 @@ function crearCactus()
         cactus.img=cactus1Img;
         cactus.width=cactus1Width;
         cactusArray.push(cactus);
+    }
+
+    if (cactusArray.length > 5) {
+        cactus.shift(); //elimina el primer elemento del arreglo para que no se acumule en la memoria
+    }
+}
+
+function saltar(event)
+{
+    if (event.code == "Space" || event.code == "ArrowUp" && dino.y===dinoY) {
+        velocidadSalto = -15;
     }
 }
