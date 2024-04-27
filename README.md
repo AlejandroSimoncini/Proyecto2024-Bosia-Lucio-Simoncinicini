@@ -1,4 +1,7 @@
 Titulo: Dino Game
+
+
+
 Autores: 
 *Bosia Agustina 
 *Lucio Tomas
