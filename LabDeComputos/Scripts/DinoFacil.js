@@ -1,7 +1,10 @@
 //board
-let board;
-let boardWidth=750;
-let boardHeight=250;
+let board = document.getElementById('board');
+let computedStyle = getComputedStyle(board);
+let boardHeight = parseFloat(computedStyle.height);
+let boardWidth = parseFloat(computedStyle.width);
+
+
 let context; //variable usada para dibujar sobre el canvas
 
 //dino
@@ -45,7 +48,8 @@ window.onload = function() //
 
     dinoImg= new Image();
     dinoImg.src = "../Imagenes/Dino.gif";
-    dinoImg.onload = function(){
+    dinoImg.onload = function()
+    {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
     }
 
