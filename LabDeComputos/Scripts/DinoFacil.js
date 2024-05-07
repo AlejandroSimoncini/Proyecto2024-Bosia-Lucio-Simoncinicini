@@ -80,7 +80,7 @@ function actualizar()  //funcion que dibuja cada frame
         cactus.x+=velocidadX;
         context.drawImage(cactus.img , cactus.x , cactus.y , cactus.width , cactus.height);
         
-        if (colicion(dino,cactus)) 
+        if (colision(dino,cactus)) 
         {
             gameOver = true;
         }
