@@ -125,10 +125,10 @@ function saltar(event)
     }
 }
 
-function colicion(din,cac)
+function colision(din,cac)
 {
-    return din.x < cac.x + cac.width && //esquina superior izquierda del dino / esquina superior derecha catus
-        din.x + dino.width > cac.x &&  //esquina superior derecha dino / esquina superior izquirda cactus
-        din.y < cac.y + cac.width &&  // esquina superior izquierda dino / esquina inferior izquierda cactus
-        din.y + din.height > cac.y;  // esquina inferior izquierda dino / esquina superior izquierda cactus
+    return din.x < cac.x + cac.width  && //esquina superior izquierda del dino / esquina superior derecha catus
+        din.x + dino.width > cac.x  &&  //esquina superior derecha dino / esquina superior izquirda cactus
+        din.y < cac.y + cac.height &&  // esquina superior izquierda dino / esquina inferior izquierda cactus
+        din.y + din.height > cac.y;   // esquina inferior izquierda dino / esquina superior izquierda cactus
 }
