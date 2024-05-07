@@ -35,9 +35,9 @@ let gravedad = 1.5;
 
 let gameOver;
 
-window.onload = function() //
+window.onload = function() //inicializa el board
 {
-    board = document.getElementById("board");
+    board = document.getElementById("board"); //busca el elemento board en el html
     board.height=boardHeight;
     board.width=boardWidth;
 
@@ -74,7 +74,7 @@ function actualizar()  //funcion que dibuja cada frame
     dino.y = Math.min(dino.y + velocidadSalto, dinoY); //agrega la velocidad y asegura que el dinosaurio no salga del board
     context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
 
-    for (let i=0 ;i <cactusArray.length; i++)
+    for (let i=0 ;i <cactusArray.length; i++)  //itera entre los cactus que pertenecen al array modificando su posicion en x
     {
         let cactus=cactusArray[i];
         cactus.x+=velocidadX;
@@ -83,12 +83,8 @@ function actualizar()  //funcion que dibuja cada frame
         if (colicion(dino,cactus)) 
         {
             gameOver = true;
-            dinoImg.onload = function(){
-                context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
-            }
         }
     }
-
 }
 
 function crearCactus()
