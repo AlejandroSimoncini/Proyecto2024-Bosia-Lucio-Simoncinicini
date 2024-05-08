@@ -1,8 +1,7 @@
 //board
-let board = document.getElementById('board');
-let computedStyle = getComputedStyle(board);
-let boardHeight = parseFloat(computedStyle.height);
-let boardWidth = parseFloat(computedStyle.width);
+let board;
+let boardHeight = 250;
+let boardWidth = 700;
 
 
 let context; //variable usada para dibujar sobre el canvas
