@@ -83,7 +83,7 @@ function actualizar()  //funcion que dibuja cada frame
         cactus.x+=velocidadX;
         context.drawImage(cactus.img , cactus.x , cactus.y , cactus.width , cactus.height);
         
-        if (colicion(dino,cactus)) 
+        if (colision(dino,cactus)) 
         {
             gameOver = true;
             dinoImg.onload = function(){
@@ -132,7 +132,7 @@ function saltar(event)
     }
 }
 
-function colicion(din,cac)
+function colision(din,cac)
 {
     return din.x < cac.x + cac.width && //esquina superior izquierda del dino / esquina superior derecha catus
         din.x + dino.width > cac.x &&  //esquina superior derecha dino / esquina superior izquirda cactus
