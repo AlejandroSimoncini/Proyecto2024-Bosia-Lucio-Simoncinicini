@@ -36,6 +36,10 @@ let velocidadSalto = 0;
 let gravedad = 1.5;
 
 let gameOver;
+let score=0;
+let showScore;
+let finalScore;
+const dificultad=2;
 
 window.onload = function() //
 {
@@ -86,12 +90,18 @@ function actualizar()  //funcion que dibuja cada frame
         if (colision(dino,cactus)) 
         {
             gameOver = true;
-            dinoImg.onload = function(){
-                context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
-            }
+            finalScore = showScore;
+            obtenerScore();
         }
     }
 
+    score += 0.2;
+    showScore = Math.floor(score);
+    
+    context.font = '24px Arial';
+    context.fillStyle = 'black';
+
+    context.fillText(showScore.toString(),650,20);
 }
 
 function crearCactus()
@@ -138,4 +148,9 @@ function colision(din,cac)
         din.x + dino.width > cac.x &&  //esquina superior derecha dino / esquina superior izquirda cactus
         din.y < cac.y + cac.width &&  // esquina superior izquierda dino / esquina inferior izquierda cactus
         din.y + din.height > cac.y;  // esquina inferior izquierda dino / esquina superior izquierda cactus
+}
+
+function obtenerScore()
+{
+    return finalScore;
 }
