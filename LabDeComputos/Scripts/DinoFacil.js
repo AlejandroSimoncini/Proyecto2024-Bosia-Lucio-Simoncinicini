@@ -1,8 +1,7 @@
 //board
-let board = document.getElementById('board');
-let computedStyle = getComputedStyle(board);
-let boardHeight = parseFloat(computedStyle.height);
-let boardWidth = parseFloat(computedStyle.width);
+let board;
+let boardHeight = 250;
+let boardWidth = 700;
 
 
 let context; //variable usada para dibujar sobre el canvas
@@ -38,9 +37,9 @@ let gravedad = 1.5;
 
 let gameOver;
 
-window.onload = function() //inicializa el board
+window.onload = function() //
 {
-    board = document.getElementById("board"); //busca el elemento board en el html
+    board = document.getElementById("board");
     board.height=boardHeight;
     board.width=boardWidth;
 
@@ -78,7 +77,7 @@ function actualizar()  //funcion que dibuja cada frame
     dino.y = Math.min(dino.y + velocidadSalto, dinoY); //agrega la velocidad y asegura que el dinosaurio no salga del board
     context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
 
-    for (let i=0 ;i <cactusArray.length; i++)  //itera entre los cactus que pertenecen al array modificando su posicion en x
+    for (let i=0 ;i <cactusArray.length; i++)
     {
         let cactus=cactusArray[i];
         cactus.x+=velocidadX;
@@ -87,8 +86,12 @@ function actualizar()  //funcion que dibuja cada frame
         if (colicion(dino,cactus)) 
         {
             gameOver = true;
+            dinoImg.onload = function(){
+                context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
+            }
         }
     }
+
 }
 
 function crearCactus()
@@ -129,10 +132,10 @@ function saltar(event)
     }
 }
 
-function colision(din,cac)
+function colicion(din,cac)
 {
-    return din.x < cac.x + cac.width  && //esquina superior izquierda del dino / esquina superior derecha catus
-        din.x + dino.width > cac.x  &&  //esquina superior derecha dino / esquina superior izquirda cactus
-        din.y < cac.y + cac.height &&  // esquina superior izquierda dino / esquina inferior izquierda cactus
-        din.y + din.height > cac.y;   // esquina inferior izquierda dino / esquina superior izquierda cactus
+    return din.x < cac.x + cac.width && //esquina superior izquierda del dino / esquina superior derecha catus
+        din.x + dino.width > cac.x &&  //esquina superior derecha dino / esquina superior izquirda cactus
+        din.y < cac.y + cac.width &&  // esquina superior izquierda dino / esquina inferior izquierda cactus
+        din.y + din.height > cac.y;  // esquina inferior izquierda dino / esquina superior izquierda cactus
 }
