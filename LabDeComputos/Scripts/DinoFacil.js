@@ -5,7 +5,7 @@ let boardHeight=250;
 let context; //variable usada para dibujar sobre el canvas
 
 //dino
-let dinoWidth=40;
+let dinoWidth=50;
 let dinoHeight=80;
 let dinoX=50;
 let dinoY=boardHeight-dinoHeight; //altura del tablero - altura del dinosaurio
@@ -20,8 +20,8 @@ let dino={
 
 //cactus
 let cactusArray=[];
-let cactus1Width=24;
-let cactus2Width=40;
+let cactus1Width=34;
+let cactus2Width=70;
 let catusHeight=70;
 let cactusX=700;
 let cactusY=boardHeight-catusHeight;
@@ -48,16 +48,16 @@ window.onload = function() //inicializa el board
     context = board.getContext("2d"); //se usa para dibujar en el board
 
     dinoImg= new Image();
-    dinoImg.src = "../Imagenes/Dino.gif";
+    dinoImg.src = "../Imagenes/DinoJuego.png";
     dinoImg.onload = function(){
         context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
     }
 
     cactus1Img = new Image();
-    cactus1Img.src = "../Imagenes/Cactus.gif";
+    cactus1Img.src = "../Imagenes/Cactus1Juego.png";
 
     cactus2Img = new Image();
-    cactus2Img.src = "../Imagenes/TresCactus.gif";
+    cactus2Img.src = "../Imagenes/Cactus3Juego.png";
     
     requestAnimationFrame(actualizar);
     setInterval(crearCactus, 1000); //llama a la funcion crear cactus cada 1000 milisegundos = 1 segundo
