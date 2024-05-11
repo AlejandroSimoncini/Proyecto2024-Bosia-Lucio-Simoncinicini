@@ -239,3 +239,20 @@ a{
     padding-left: 10px;
     padding-right: 10px;
 }
+
+
+
+#tomaDatos
+{
+    width: 100%; height: auto;
+    background-color: transparent;
+    display: none;
+    align-items: center; justify-content: center;
+    padding-top: 10px; padding-left: 25px;
+}
+#data
+{
+    width: auto;
+    height: auto;
+    display: flex;
+}
