@@ -104,6 +104,7 @@ function actualizar()  //funcion que dibuja cada frame
     requestAnimationFrame(actualizar);
     
     if (gameOver) {
+        esconderBoton();
         return;
     }
 

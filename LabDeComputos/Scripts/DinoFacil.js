@@ -1,7 +1,9 @@
 //board
 let board;
-let boardWidth=750;
-let boardHeight=250;
+let boardHeight = 250;
+let boardWidth = 750;
+
+
 let context; //variable usada para dibujar sobre el canvas
 
 //dino
@@ -83,11 +85,8 @@ function guardarPuntaje() {
 
 function GameOver(evento)
 {
-    
-
     // guardamo el puntaje
     guardarPuntaje();
-
 }
 
 function checkEnter(evento)// cuando presiona enter luego de poner el nombre
@@ -102,7 +101,9 @@ function actualizar()  //funcion que dibuja cada frame
 {
     requestAnimationFrame(actualizar);
     
-    if (gameOver) {
+    if (gameOver) 
+    {
+        esconderBoton();
         return;
     }
 
