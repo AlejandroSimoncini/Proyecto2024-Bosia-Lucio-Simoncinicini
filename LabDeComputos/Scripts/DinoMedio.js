@@ -1,13 +1,11 @@
 //board
 let board;
-let boardHeight = 250;
-let boardWidth = 700;
-
-
+let boardWidth=750;
+let boardHeight=250;
 let context; //variable usada para dibujar sobre el canvas
 
 //dino
-let dinoWidth=70;
+let dinoWidth=50;
 let dinoHeight=80;
 let dinoX=50;
 let dinoY=boardHeight-dinoHeight; //altura del tablero - altura del dinosaurio
@@ -23,7 +21,7 @@ let dino={
 //cactus
 let cactusArray=[];
 let cactus1Width=34;
-let cactus2Width=60;
+let cactus2Width=70;
 let catusHeight=70;
 let cactusX=700;
 let cactusY=boardHeight-catusHeight;
@@ -39,32 +37,64 @@ let gameOver;
 let score=0;
 let showScore;
 let finalScore;
-const dificultad=2;
+const dificultad=1;
 
-window.onload = function() //
+window.onload = function() //inicializa el board
 {
-    board = document.getElementById("board");
+    board = document.getElementById("board"); //busca el elemento board en el html
     board.height=boardHeight;
     board.width=boardWidth;
 
     context = board.getContext("2d"); //se usa para dibujar en el board
 
     dinoImg= new Image();
-    dinoImg.src = "../Imagenes/Dino.gif";
-    dinoImg.onload = function()
-    {
+    dinoImg.src = "../Imagenes/DinoJuego.png";
+    dinoImg.onload = function(){
         context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
     }
 
     cactus1Img = new Image();
-    cactus1Img.src = "../Imagenes/Cactus.gif";
+    cactus1Img.src = "../Imagenes/Cactus1Juego.png";
 
     cactus2Img = new Image();
-    cactus2Img.src = "../Imagenes/TresCactus.gif";
+    cactus2Img.src = "../Imagenes/Cactus3Juego.png";
     
     requestAnimationFrame(actualizar);
     setInterval(crearCactus, 1000); //llama a la funcion crear cactus cada 1000 milisegundos = 1 segundo
     document.addEventListener("keydown", saltar);
+}
+
+function guardarPuntaje() {
+
+    console.log("Guardando puntaje..."); // Mensaje de depuración
+    let nombre = document.getElementById("nombre").value;
+    let puntaje = obtenerScore();
+
+    // obtiene el num de jugadores ya registrados
+    const numJugadoresRegistrados = parseInt(localStorage.getItem("numJugadores")) || 0;
+
+    // pone los datos del nuevo jugador en localStorage
+    localStorage.setItem(`jugador${numJugadoresRegistrados + 1}_nombre`, nombre);
+    localStorage.setItem(`jugador${numJugadoresRegistrados + 1}_puntaje`, puntaje.toString());
+
+    // Incrementa el contador de jugadores registrados
+    localStorage.setItem("numJugadores", numJugadoresRegistrados + 1);
+}
+
+function GameOver(evento)
+{
+    
+
+    // guardamo el puntaje
+    guardarPuntaje();
+
+}
+
+function checkEnter(evento) {
+    console.log("Tecla presionada:", evento.key);
+    if (evento.key === "Enter") { // Verificar si la tecla presionada es "Enter"
+        GameOver();
+    }
 }
 
 function actualizar()  //funcion que dibuja cada frame
@@ -81,7 +111,7 @@ function actualizar()  //funcion que dibuja cada frame
     dino.y = Math.min(dino.y + velocidadSalto, dinoY); //agrega la velocidad y asegura que el dinosaurio no salga del board
     context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
 
-    for (let i=0 ;i <cactusArray.length; i++)
+    for (let i=0 ;i <cactusArray.length; i++)  //itera entre los cactus que pertenecen al array modificando su posicion en x
     {
         let cactus=cactusArray[i];
         cactus.x+=velocidadX;
@@ -91,10 +121,13 @@ function actualizar()  //funcion que dibuja cada frame
         {
             gameOver = true;
             finalScore = showScore;
-            obtenerScore();
+            // interfaz para ingresar nombre y guardar puntaje
+            var aparecer = document.getElementById('tomaDatos');
+            aparecer.style.display = 'flex';
+            return; // Sal del bucle para detener la actualización del juego
         }
     }
-
+          
     score += 0.2;
     showScore = Math.floor(score);
     
@@ -102,6 +135,8 @@ function actualizar()  //funcion que dibuja cada frame
     context.fillStyle = 'black';
 
     context.fillText(showScore.toString(),650,20);
+
+    
 }
 
 function crearCactus()
@@ -144,10 +179,10 @@ function saltar(event)
 
 function colision(din,cac)
 {
-    return din.x < cac.x + cac.width && //esquina superior izquierda del dino / esquina superior derecha catus
-        din.x + dino.width > cac.x &&  //esquina superior derecha dino / esquina superior izquirda cactus
-        din.y < cac.y + cac.width &&  // esquina superior izquierda dino / esquina inferior izquierda cactus
-        din.y + din.height > cac.y;  // esquina inferior izquierda dino / esquina superior izquierda cactus
+    return din.x < cac.x + cac.width  && //esquina superior izquierda del dino / esquina superior derecha catus
+        din.x + dino.width > cac.x  &&  //esquina superior derecha dino / esquina superior izquirda cactus
+        din.y < cac.y + cac.height &&  // esquina superior izquierda dino / esquina inferior izquierda cactus
+        din.y + din.height > cac.y;   // esquina inferior izquierda dino / esquina superior izquierda cactus
 }
 
 function obtenerScore()

@@ -5,7 +5,7 @@ let boardHeight=250;
 let context; //variable usada para dibujar sobre el canvas
 
 //dino
-let dinoWidth=40;
+let dinoWidth=50;
 let dinoHeight=80;
 let dinoX=50;
 let dinoY=boardHeight-dinoHeight; //altura del tablero - altura del dinosaurio
@@ -20,8 +20,8 @@ let dino={
 
 //cactus
 let cactusArray=[];
-let cactus1Width=24;
-let cactus2Width=40;
+let cactus1Width=34;
+let cactus2Width=70;
 let catusHeight=70;
 let cactusX=700;
 let cactusY=boardHeight-catusHeight;
@@ -48,20 +48,53 @@ window.onload = function() //inicializa el board
     context = board.getContext("2d"); //se usa para dibujar en el board
 
     dinoImg= new Image();
-    dinoImg.src = "../Imagenes/Dino.gif";
+    dinoImg.src = "../Imagenes/DinoJuego.png";
     dinoImg.onload = function(){
         context.drawImage(dinoImg, dino.x, dino.y, dino.width , dino.height);
     }
 
     cactus1Img = new Image();
-    cactus1Img.src = "../Imagenes/Cactus.gif";
+    cactus1Img.src = "../Imagenes/Cactus1Juego.png";
 
     cactus2Img = new Image();
-    cactus2Img.src = "../Imagenes/TresCactus.gif";
+    cactus2Img.src = "../Imagenes/Cactus3Juego.png";
     
     requestAnimationFrame(actualizar);
     setInterval(crearCactus, 1000); //llama a la funcion crear cactus cada 1000 milisegundos = 1 segundo
     document.addEventListener("keydown", saltar);
+}
+
+function guardarPuntaje() {
+
+    console.log("Guardando puntaje..."); // Mensaje de depuración
+    let nombre = document.getElementById("nombre").value;
+    let puntaje = obtenerScore();
+
+    // obtiene el num de jugadores ya registrados
+    const numJugadoresRegistrados = parseInt(localStorage.getItem("numJugadores")) || 0;
+
+    // pone los datos del nuevo jugador en localStorage
+    localStorage.setItem(`jugador${numJugadoresRegistrados + 1}_nombre`, nombre);
+    localStorage.setItem(`jugador${numJugadoresRegistrados + 1}_puntaje`, puntaje.toString());
+
+    // Incrementa el contador de jugadores registrados
+    localStorage.setItem("numJugadores", numJugadoresRegistrados + 1);
+}
+
+function GameOver(evento)
+{
+    
+
+    // guardamo el puntaje
+    guardarPuntaje();
+
+}
+
+function checkEnter(evento) {
+    console.log("Tecla presionada:", evento.key);
+    if (evento.key === "Enter") { // Verificar si la tecla presionada es "Enter"
+        GameOver();
+    }
 }
 
 function actualizar()  //funcion que dibuja cada frame
@@ -88,7 +121,10 @@ function actualizar()  //funcion que dibuja cada frame
         {
             gameOver = true;
             finalScore = showScore;
-            obtenerScore();
+            // interfaz para ingresar nombre y guardar puntaje
+            var aparecer = document.getElementById('tomaDatos');
+            aparecer.style.display = 'flex';
+            return; // Sal del bucle para detener la actualización del juego
         }
     }
           
@@ -99,6 +135,8 @@ function actualizar()  //funcion que dibuja cada frame
     context.fillStyle = 'black';
 
     context.fillText(showScore.toString(),650,20);
+
+    
 }
 
 function crearCactus()
