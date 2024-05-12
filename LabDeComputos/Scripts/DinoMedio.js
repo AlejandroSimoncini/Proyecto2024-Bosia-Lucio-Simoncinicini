@@ -66,7 +66,7 @@ window.onload = function() //inicializa el board
 
 function guardarPuntaje() {
 
-    console.log("Guardando puntaje..."); // Mensaje de depuración
+    console.log("Guardando puntaje..."); // munsaje en consola
     let nombre = document.getElementById("nombre").value;
     let puntaje = obtenerScore();
 
@@ -77,7 +77,7 @@ function guardarPuntaje() {
     localStorage.setItem(`jugador${numJugadoresRegistrados + 1}_nombre`, nombre);
     localStorage.setItem(`jugador${numJugadoresRegistrados + 1}_puntaje`, puntaje.toString());
 
-    // Incrementa el contador de jugadores registrados
+    // num +1
     localStorage.setItem("numJugadores", numJugadoresRegistrados + 1);
 }
 
@@ -90,9 +90,11 @@ function GameOver(evento)
 
 }
 
-function checkEnter(evento) {
+function checkEnter(evento)// cuando presiona enter luego de poner el nombre
+ {
     console.log("Tecla presionada:", evento.key);
-    if (evento.key === "Enter") { // Verificar si la tecla presionada es "Enter"
+    if (evento.key === "Enter")
+    { 
         GameOver();
     }
 }
