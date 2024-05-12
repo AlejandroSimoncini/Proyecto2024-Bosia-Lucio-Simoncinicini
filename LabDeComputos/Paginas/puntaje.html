@@ -1,44 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puntaje</title>
-    <link rel="stylesheet" href="../Estilos/Design.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tilt Neon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
-</head>
-<body>
-    <header>
-        <a id="TituloP" href="../DinoGame.html">DinoGame</a>
-        <ul>
-            <li><a class="boton" href="facil.html"> Facil</a></li>
-            <li><a class="boton" href="medio.html"> Medio</a></li>
-            <li><a class="boton" href="dificil.html"> Dificil</a></li>
-            <li><a class="boton1" href="puntaje.html"> Puntaje</a></li>
-        </ul>
-    </header>
-    <div id="MenuPuntaje">
-        <div id="Leadboards">
-            <div id="GridText">Nombre</div>
-            <div id="GridText">Puntos</div>
-            <div id="GridText">Dificultad</div>
-            <!-- A partir de aca se empeizan a introducir datos de 3 en 3,
-                        Respectivos ordenes de ingreso:
-                        Nombre de la persona
-                        Puntos realizados
-                        Dificultad en que jugo
-                Cualquier ingreso de datos copiar las 3 divisiones y realizar la asignacion de datos 
-            
-        </div>
-    </div>
-</body>
-</html>
-
---> 
-
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -65,20 +24,24 @@
         </ul>
         
     </header>
+    <h1>Tabla de Puntajes</h1>
 
 
-<h1>Tabla de Puntajes</h1>
+<div class="tabla-container">
+    <table>
+        <tr>
+            <th>Jugador</th>
+            <th>Puntaje</th>
+        </tr>
+        <tr>
+            <td id="nombreJugador"></td>
+            <td id="puntaje"></td>
+        </tr>
+    </table>
+    
+</div>
 
-<table>
-    <tr>
-        <th>Jugador</th>
-        <th>Puntaje</th>
-    </tr>
-    <tr>
-        <td id="nombreJugador"></td>
-        <td id="puntaje"></td>
-    </tr>
-</table>
+
 
 
 

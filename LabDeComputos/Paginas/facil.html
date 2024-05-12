@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
     <script src="../Scripts/DinoFacil.js"></script>
     <script src="../Scripts/Animations.js"></script>
-    <script src=""></script>
 </head>
 <body>
     <header>
@@ -26,8 +25,7 @@
     <canvas id="board"></canvas>
     <div id="tomaDatos">
         <label for="nombre" id="data">Nombre</label>
-        <input type="text" id="nombre">
-        
+        <input type="text" id="nombre" onkeydown="checkEnter(event)">
     </div>
 </body>
 </html>

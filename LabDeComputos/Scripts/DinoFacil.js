@@ -64,6 +64,39 @@ window.onload = function() //inicializa el board
     document.addEventListener("keydown", saltar);
 }
 
+function guardarPuntaje() {
+
+    console.log("Guardando puntaje..."); // Mensaje de depuración
+    let nombre = document.getElementById("nombre").value;
+    let puntaje = obtenerScore();
+
+    // obtiene el num de jugadores ya registrados
+    const numJugadoresRegistrados = parseInt(localStorage.getItem("numJugadores")) || 0;
+
+    // pone los datos del nuevo jugador en localStorage
+    localStorage.setItem(`jugador${numJugadoresRegistrados + 1}_nombre`, nombre);
+    localStorage.setItem(`jugador${numJugadoresRegistrados + 1}_puntaje`, puntaje.toString());
+
+    // Incrementa el contador de jugadores registrados
+    localStorage.setItem("numJugadores", numJugadoresRegistrados + 1);
+}
+
+function GameOver(evento)
+{
+    
+
+    // guardamo el puntaje
+    guardarPuntaje();
+
+}
+
+function checkEnter(evento) {
+    console.log("Tecla presionada:", evento.key);
+    if (evento.key === "Enter") { // Verificar si la tecla presionada es "Enter"
+        GameOver();
+    }
+}
+
 function actualizar()  //funcion que dibuja cada frame
 {
     requestAnimationFrame(actualizar);
@@ -88,7 +121,10 @@ function actualizar()  //funcion que dibuja cada frame
         {
             gameOver = true;
             finalScore = showScore;
-            obtenerScore();
+            // interfaz para ingresar nombre y guardar puntaje
+            var aparecer = document.getElementById('tomaDatos');
+            aparecer.style.display = 'flex';
+            return; // Sal del bucle para detener la actualización del juego
         }
     }
           
@@ -99,6 +135,8 @@ function actualizar()  //funcion que dibuja cada frame
     context.fillStyle = 'black';
 
     context.fillText(showScore.toString(),650,20);
+
+    
 }
 
 function crearCactus()
