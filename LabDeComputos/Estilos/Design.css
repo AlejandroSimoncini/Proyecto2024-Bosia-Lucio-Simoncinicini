@@ -83,7 +83,7 @@ ul li{
 .tabla-container {
     margin: 0 auto; /* Centra el contenedor de la tabla horizontalmente */
     width: 50%; /* Anchura del contenedor de la tabla */
-    background-color: #f0f0f0; /* Fondo más claro */
+    background-color: white; /* Fondo más claro */
     padding: 20px; /* Espaciado interno */
 }
 
