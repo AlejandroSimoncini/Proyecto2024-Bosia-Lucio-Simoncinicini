@@ -3,7 +3,6 @@ let board;
 let boardHeight = 250;
 let boardWidth = 750;
 
-
 let context; //variable usada para dibujar sobre el canvas
 
 //dino
@@ -72,8 +71,14 @@ window.onload = function() //inicializa el board
     teraImg.src = "../Imagenes/Teranodon.gif"
     
     requestAnimationFrame(actualizar);
-    setInterval(crearCactus, 1000); //llama a la funcion crear cactus cada 1000 milisegundos = 1 segundo
-    setInterval(crearTeranodon, 1000);
+    setInterval(() => {
+        if (Math.random() < 0.7) {
+            crearCactus();
+        } else {
+            crearTeranodon();
+        }
+    }, 1000);  
+    // si el numero que devuelve math.random es menor a 0.7 se llama a la funcion crearCactus, de lo contrario llama a crearTera en un intervalo de 1000 milisegundos = 1 segundo
     document.addEventListener("keydown", saltar);
 }
 
@@ -140,7 +145,7 @@ function actualizar()  //funcion que dibuja cada frame
             return; // Sal del bucle para detener la actualización del juego
         }
     }
-    for (let i=0 ;i <teraArray.length; i++)  //itera entre los cactus que pertenecen al array modificando su posicion en x
+    for (let i=0 ;i <teraArray.length; i++)  
     {
         let tera=teraArray[i];
         tera.x+=velocidadX;
@@ -151,10 +156,9 @@ function actualizar()  //funcion que dibuja cada frame
         {
             gameOver = true;
             finalScore = showScore;
-            // interfaz para ingresar nombre y guardar puntaje
             var aparecer = document.getElementById('tomaDatos');
             aparecer.style.display = 'flex';
-            return; // Sal del bucle para detener la actualización del juego
+            return;
         }
     }
           
@@ -165,8 +169,6 @@ function actualizar()  //funcion que dibuja cada frame
     context.fillStyle = 'black';
 
     context.fillText(showScore.toString(),650,20);
-
-    
 }
 
 function crearCactus()
