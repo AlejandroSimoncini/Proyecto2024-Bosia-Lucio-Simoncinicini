@@ -29,7 +29,7 @@ let cactus1Img;
 let cactus2Img;
 
 //fisicas
-let velocidadX= -8;
+let velocidadX= -12;
 let velocidadSalto = 0;
 let gravedad = 1.5;
 
@@ -130,7 +130,7 @@ function actualizar()  //funcion que dibuja cada frame
         }
     }
           
-    score += 0.2;
+    score += 0.12;
     showScore = Math.floor(score);
     
     context.font = '24px Arial';

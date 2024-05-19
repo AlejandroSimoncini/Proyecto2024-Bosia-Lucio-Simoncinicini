@@ -30,6 +30,13 @@ let cactusY=boardHeight-catusHeight;
 let cactus1Img;
 let cactus2Img;
 
+let teraArray = [];
+let teraWidth = 40;
+let teraHeigth = 40;
+let teraX = 700;
+let teraY;
+let teraImg;
+
 //fisicas
 let velocidadX= -8;
 let velocidadSalto = 0;
@@ -60,9 +67,13 @@ window.onload = function() //inicializa el board
 
     cactus2Img = new Image();
     cactus2Img.src = "../Imagenes/Cactus3Juego.png";
+
+    teraImg = new Image();
+    teraImg.src = "../Imagenes/Teranodon.gif"
     
     requestAnimationFrame(actualizar);
     setInterval(crearCactus, 1000); //llama a la funcion crear cactus cada 1000 milisegundos = 1 segundo
+    setInterval(crearTeranodon, 1000);
     document.addEventListener("keydown", saltar);
 }
 
@@ -129,6 +140,23 @@ function actualizar()  //funcion que dibuja cada frame
             return; // Sal del bucle para detener la actualización del juego
         }
     }
+    for (let i=0 ;i <teraArray.length; i++)  //itera entre los cactus que pertenecen al array modificando su posicion en x
+    {
+        let tera=teraArray[i];
+        tera.x+=velocidadX;
+        
+        context.drawImage(tera.img , tera.x , tera.y , tera.width , tera.height);
+        
+        if (colision(dino,tera)) 
+        {
+            gameOver = true;
+            finalScore = showScore;
+            // interfaz para ingresar nombre y guardar puntaje
+            var aparecer = document.getElementById('tomaDatos');
+            aparecer.style.display = 'flex';
+            return; // Sal del bucle para detener la actualización del juego
+        }
+    }
           
     score += 0.2;
     showScore = Math.floor(score);
@@ -169,6 +197,33 @@ function crearCactus()
 
     if (cactusArray.length > 5) {
         cactus.shift(); //elimina el primer elemento del arreglo para que no se acumule en la memoria
+    }
+}
+
+function crearTeranodon()
+{
+    let tera = {
+        img : teraImg,
+        x : teraX,
+        y : null,
+        width : teraWidth,
+        height : teraHeigth
+    }
+    let crearTeraRand = Math.random(); //devuelve funciones entre 0 y 1
+    
+    if (crearTeraRand>0.80) 
+    {
+        tera.y = 125;
+        teraArray.push(tera);
+    }
+    else if (crearTeraRand>0.50) 
+    {
+        tera.y = 200 ;
+        teraArray.push(tera);
+    }
+
+    if (teraArray.length > 5) {
+        tera.shift(); //elimina el primer elemento del arreglo para que no se acumule en la memoria
     }
 }
 

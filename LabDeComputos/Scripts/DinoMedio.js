@@ -29,7 +29,7 @@ let cactus1Img;
 let cactus2Img;
 
 //fisicas
-let velocidadX= -8;
+let velocidadX= -10;
 let velocidadSalto = 0;
 let gravedad = 1.5;
 
