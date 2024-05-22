@@ -84,8 +84,6 @@ function guardarPuntaje() {
 
 function GameOver(evento)
 {
-    
-
     // guardamo el puntaje
     guardarPuntaje();
 
