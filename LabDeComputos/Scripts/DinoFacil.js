@@ -97,6 +97,7 @@ function guardarPuntaje() {
 
     // num +1
     localStorage.setItem("numJugadores", numJugadoresRegistrados + 1);
+    location.reload();
 }
 
 function GameOver(evento)
