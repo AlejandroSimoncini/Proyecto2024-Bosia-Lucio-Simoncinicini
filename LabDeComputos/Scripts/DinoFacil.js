@@ -80,8 +80,25 @@ window.onload = function() //inicializa el board
     }, 1000);  
     // si el numero que devuelve math.random es menor a 0.7 se llama a la funcion crearCactus, de lo contrario llama a crearTera en un intervalo de 1000 milisegundos = 1 segundo
     document.addEventListener("keydown", saltar);
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
 }
 
+function checkScreenSize() {
+    const jumpButton = document.getElementById('jumpButton');
+    if (Width < 500) {
+        jumpButton.style.display = 'block';
+        
+    } else {
+        jumpButton.style.display = 'none';
+    }
+}
+
+function jump() {
+    if (dino.y === dinoY) {
+        velocidadSalto = -20;
+    }
+}
 function guardarPuntaje() {
 
     console.log("Guardando puntaje..."); // munsaje en consola

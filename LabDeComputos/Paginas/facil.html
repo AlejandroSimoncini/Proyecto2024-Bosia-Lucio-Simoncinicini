@@ -24,10 +24,14 @@
         </ul>
         
     </header>
+
     <canvas id="board"></canvas>
+    <button id="jumpButton" onclick="jump()">Saltar</button>
+
     <div id="tomaDatos">
         <label for="nombre" id="data">Nombre</label>
         <input type="text" id="nombre" onkeydown="checkEnter(event)">
+        <button id="guardarBtn" onclick="guardarPuntaje()">Guardar Puntaje</button>
     </div>
 
     <div id="bajoTablero"></div>

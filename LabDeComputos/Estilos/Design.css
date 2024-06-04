@@ -95,6 +95,8 @@ ul li{
 
 /* CSS DE LA TABLA DE PUNTAJES */
 
+
+
 .tabla-container {
     margin: 0 auto; /* Centra el contenedor de la tabla horizontalmente */
     width: 50%; /* Anchura del contenedor de la tabla */
@@ -313,10 +315,57 @@ a{
 }
 
 
-@media (max-width:500){ 
-    .TituloP{
-        width: 100px;
-        margin: 100px;
-        color: aqua;
+#jumpButton {
+    display: none;
+    
+}
+
+@media (max-width: 500px) {
+    #jumpButton {
+        display: block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #444;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 400px; height: 150px;
+        align-items: center;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        color: black;
+    }
+    
+    .TituloP {
+        margin-bottom: 0px;
+        margin-top: 80px;
+    }
+    
+    ul {
+        flex-direction: column;
+    }
+    
+    ul li {
+        margin: 0px 0;
+        color: black;
+    }
+
+    .boton
+    {
+    opacity: 0.8;
+    color: black;
+    font-family: "Tilt Neon"; font-size: medium;
+    width: auto; height: auto;
+    background-color: transparent;
+    border: 0px;
+    flex-wrap: wrap;
+    text-shadow: #444;
+    }
+    .title{
+        margin-top: 100px;
     }
 }
