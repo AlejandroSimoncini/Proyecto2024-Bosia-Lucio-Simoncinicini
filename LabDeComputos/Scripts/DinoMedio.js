@@ -62,6 +62,18 @@ window.onload = function() //inicializa el board
     requestAnimationFrame(actualizar);
     setInterval(crearCactus, 1000); //llama a la funcion crear cactus cada 1000 milisegundos = 1 segundo
     document.addEventListener("keydown", saltar);
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+}
+
+function checkScreenSize() {
+    const jumpButton = document.getElementById('jumpButton');
+    if (window.innerWidth < 500) {
+        jumpButton.style.display = 'block';
+        esconderBoton();
+    } else {
+        jumpButton.style.display = 'none';
+    }
 }
 
 function guardarPuntaje() {

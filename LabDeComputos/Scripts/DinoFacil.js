@@ -86,9 +86,9 @@ window.onload = function() //inicializa el board
 
 function checkScreenSize() {
     const jumpButton = document.getElementById('jumpButton');
-    if (Width < 500) {
+    if (window.innerWidth < 500) {
         jumpButton.style.display = 'block';
-        
+        esconderBoton();
     } else {
         jumpButton.style.display = 'none';
     }
