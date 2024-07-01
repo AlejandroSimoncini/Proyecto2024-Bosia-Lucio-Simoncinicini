@@ -47,7 +47,8 @@ let showScore;
 let finalScore;
 const dificultad=1;
 
-window.onload = function() //inicializa el board
+//inicializa el board
+window.onload = function()
 {
     board = document.getElementById("board"); //busca el elemento board en el html
     board.height=boardHeight;
@@ -262,7 +263,15 @@ function colision(din,cac)
         din.y + din.height > cac.y;   // esquina inferior izquierda dino / esquina superior izquierda cactus
 }
 
+
+
 function obtenerScore()
+
+/*
+* @method obtener el score
+* @param {number} finalscore - puntaje al momento de perder
+* @return number 
+*/
 {
     return finalScore;
 }

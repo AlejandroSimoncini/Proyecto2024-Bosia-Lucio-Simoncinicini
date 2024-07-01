@@ -206,6 +206,12 @@ function colision(din,cac)
         din.y + din.height > cac.y;   // esquina inferior izquierda dino / esquina superior izquierda cactus
 }
 
+/*
+* @method obtener el score
+* @param {number} finalscore - puntaje al momento de perder
+* @return number 
+*/
+
 function obtenerScore()
 {
     return finalScore;
