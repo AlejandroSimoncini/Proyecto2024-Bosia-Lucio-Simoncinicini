@@ -84,7 +84,7 @@ window.onload = function() //inicializa el board
     window.addEventListener('resize', checkScreenSize);
 }
 
-function checkScreenSize() {
+function checkScreenSize() { //Funcion que evalua el ancho de la pantalla para compatibilizar
     const jumpButton = document.getElementById('jumpButton');
     if (window.innerWidth < 500) {
         jumpButton.style.display = 'block';
@@ -94,7 +94,7 @@ function checkScreenSize() {
     }
 }
 
-function jump() {
+function jump() { // Funcion de salto con el boton en el celu
     if (dino.y === dinoY) {
         velocidadSalto = -20;
     }
