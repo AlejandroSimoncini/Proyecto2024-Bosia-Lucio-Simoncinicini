@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tilt Neon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <meta autores="Bosia, Simoncini, Lucio" palabras clave="Juego; Dinosaurio; Juego; Categorias">
     <script src="../Scripts/DinoDificil.js"></script>
     <script src="../Scripts/Animations.js"></script>
     <script src="../Scripts/Botones.js"></script>
+    <script src="../Scripts/Board.js"></script>
 </head>
 <body id="bodi">
     <header>
@@ -24,6 +26,8 @@
         
     </header>
     <canvas id="board"></canvas>
+    <button id="jumpButton" onclick="jump()">Saltar</button>
+
     <div id="tomaDatos">
         <label for="nombre" id="data">Nombre</label>
         <input type="text" id="nombre" onkeydown="checkEnter(event)">

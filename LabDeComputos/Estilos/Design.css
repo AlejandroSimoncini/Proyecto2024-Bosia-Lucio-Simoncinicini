@@ -99,6 +99,7 @@ ul li{
 
 .tabla-container {
     margin: 0 auto; /* Centra el contenedor de la tabla horizontalmente */
+    margin-top: 50px;
     width: 50%; /* Anchura del contenedor de la tabla */
     background-color: white; /* Fondo más claro */
     padding: 20px; /* Espaciado interno */
@@ -119,6 +120,10 @@ th, td {
 th {
     background-color: #4CAF50;
     color: white;
+}
+
+caption{
+    font-size: 25px;
 }
 
 
