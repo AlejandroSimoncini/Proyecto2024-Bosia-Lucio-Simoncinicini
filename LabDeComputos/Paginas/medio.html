@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nivel Medio</title>
-    <meta autores="Bosia, Simoncini, Lucio" palabras clave="Juego; Dinosaurio; Juego; Categorias">
-    <link rel="stylesheet" href="../Estilos/Design.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tilt Neon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
-    <script src="../Scripts/DinoMedio.js"></script>
-    <script src="../Scripts/Animations.js"></script>
-    <script src="../Scripts/Botones.js"></script>
-    <script src="../Scripts/Board.js"></script>
-</head>
-<body id="bodi">
-    <header>
-        <a class="TituloP" href="../index.html">DinoGame</a>
-        <ul>
-            <li><a class="boton" href="facil.html"> Fácil</a></li>
-            <li><a class="boton" href="medio.html"> Medio</a></li>
-            <li><a class="boton" href="dificil.html"> Difícil</a></li>
-            <li><a class="boton1" href="puntaje.html"> Puntaje</a></li>
-        </ul>
-        
-    </header>
-    <canvas id="board"></canvas>
-    <button id="jumpButton" onclick="jump()">Saltar</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nivel Medio</title>
+        <meta autores="Bosia, Simoncini, Lucio" palabras clave="Juego; Dinosaurio; Juego; Categorias">
+        <link rel="stylesheet" href="../Estilos/Design.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tilt Neon">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pixelify Sans">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+        <script src="../Scripts/DinoMedio.js"></script>
+        <script src="../Scripts/Animations.js"></script>
+        <script src="../Scripts/Botones.js"></script>
+        <script src="../Scripts/Board.js"></script>
+    </head>
+    <body id="bodi">
+        <header>
+            <a class="TituloP" href="../index.html">DinoGame</a>
+            <ul>
+                <li><a class="boton" href="facil.html"> Fácil</a></li>
+                <li><a class="boton" href="medio.html"> Medio</a></li>
+                <li><a class="boton" href="dificil.html"> Difícil</a></li>
+                <li><a class="boton1" href="puntaje.html"> Puntaje</a></li>
+            </ul>
+            
+        </header>
+        <canvas id="board"></canvas>
+        <button id="jumpButton" onclick="jump()">Saltar</button>
 
-    <div id="tomaDatos">
-        <label for="nombre" id="data">Nombre</label>
-        <input type="text" id="nombre" onkeydown="checkEnter(event)">
-    </div>
-    <div id="bajoTablero"></div>
-</body>
+        <div id="tomaDatos">
+            <label for="nombre" id="data">Nombre</label>
+            <input type="text" id="nombre" onkeydown="checkEnter(event)">
+        </div>
+        <div id="bajoTablero"></div>
+    </body>
 </html>

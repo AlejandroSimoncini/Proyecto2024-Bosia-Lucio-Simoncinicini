@@ -71,8 +71,6 @@ ul li{
     transition: all 0.1s; 
 }
 
-
-
 .menu
 {
     width: 100%; height: 100%;
@@ -94,8 +92,6 @@ ul li{
 }
 
 /* CSS DE LA TABLA DE PUNTAJES */
-
-
 
 .tabla-container {
     margin: 0 auto; /* Centra el contenedor de la tabla horizontalmente */
@@ -125,15 +121,6 @@ th {
 caption{
     font-size: 25px;
 }
-
-
-
-
-
-
-
-
-
 
 .boton
 {
@@ -170,9 +157,6 @@ caption{
 a{
     text-decoration: none;
 }
-
-
-
 
 #DinoP
 {
@@ -252,8 +236,6 @@ a{
     transition: all 0.2s;
 }   /*Aca termina*/
 
-
-
 #MenuPuntaje
 {
     width: 100%;
@@ -265,7 +247,6 @@ a{
     display: flex;
     gap: 30px;
 }
-
 
 #Leadboards
 {
@@ -288,8 +269,6 @@ a{
     padding-left: 10px;
     padding-right: 10px;
 }
-
-
 
 #tomaDatos
 {
